@@ -1,125 +1,254 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
 
 :root {
-    /*primary*/
-    --tomato: hsl(4, 100%, 67%);
-    /*Neutral*/
-    --dark-slate-grey: hsl(234, 29%, 20%);
-    --charcoal-grey: hsl(235, 18%, 26%);
-    --grey: hsl(231, 7%, 60%);
-    --white: hsl(0, 0%, 100%);
-    /*fonts*/
-    --main: 'Roboto', sans-serif;
-
-    /*gradient*/
-    --color1: hsl(347, 100%, 66%);
-    --color2: hsl(12, 100%, 63%); 
+  /*primary*/
+  --tomato: hsl(4, 100%, 67%);
+  /*Neutral*/
+  --dark-slate-grey: hsl(234, 29%, 20%);
+  --charcoal-grey: hsl(235, 18%, 26%);
+  --grey: hsl(231, 7%, 60%);
+  --white: hsl(0, 0%, 100%);
+  /*fonts*/
+  --main: "Roboto", sans-serif;
+  /*gradient*/
+  --color1: hsl(347, 100%, 66%);
+  --color2: hsl(12, 100%, 63%);
+  /*error state*/
+  --error-bg: hsl(4, 100%, 95%);
 }
 
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 html {
-    font-size: 62.5%;
+  font-size: 62.5%;
 }
 
 body {
-    font-size: 1.6rem;
-    font-family: var(--main);
-    height: 100%;
-    width: 100%;
+  font-size: 1.6rem;
+  font-family: var(--main);
+  height: 100%;
+  width: 100%;
 }
 
-
 .grid-container {
-    display: grid;
-    height: 100vh;
-    width: 100vw;
-    grid-template-rows: 1fr 0.03fr;
+  display: grid;
+  height: 100vh;
+  width: 100vw;
+  grid-template-rows: 1fr 0.03fr;
 }
 
 .main {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 .main-content {
-    max-width: 375px;
+  max-width: 375px;
 }
 
 .content {
-    padding: 0 20px;
-    margin-top: 20px;
+  padding: 0 20px;
+  margin-top: 20px;
 }
 
 .content-header {
-    font-size: 3.6rem;
-    font-family: var(--main);
-    font-weight: 700;
+  font-size: 3.6rem;
+  font-family: var(--main);
+  font-weight: 700;
 }
 
 .content-info {
-    font-weight: 400;
-    padding: 20px 0;
+  font-weight: 400;
+  padding: 20px 0;
 }
 
-
-
 .list li {
-    list-style-type: none;
-    padding-bottom: 12px;
-    line-height: 1.6;
-    display:flex;
-    
+  list-style-type: none;
+  padding-bottom: 12px;
+  line-height: 1.6;
+  display: flex;
 }
 
 .list li::before {
-    content: url('./assets/images/icon-list.svg');
-    margin-right: 15px;
+  content: url("./assets/images/icon-list.svg");
+  margin-right: 15px;
 }
 
 form {
-    margin: 20px 0 30px 0;
-    display: flex;
-    flex-direction: column;
+  margin: 20px 0 30px 0;
+  display: flex;
+  flex-direction: column;
 }
 
 label {
-    font-size: 1.2rem;
-    color: var(--dark-slate-grey);
-    font-family: var(--main);
-    font-weight: 700;
-    padding-bottom: 10px;
+  font-size: 1.2rem;
+  color: var(--dark-slate-grey);
+  font-family: var(--main);
+  font-weight: 700;
+  padding-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+label #error-state {
+  color: var(--tomato);
+  display: none;
+}
+
+.error {
+  outline: 1px solid var(--tomato);
+}
+
+.error-input {
+  color: tomato !important;
+  background-color: var(--error-bg);
 }
 
 input[type="email"] {
-    width: 100%;
-    padding: 16px;
-    border-radius: 5px;
-    border: 1px solid var(--grey);
-    color: var(--gray);
-    font-weight: 400;
-    font-size: 1.6rem;
-    cursor: pointer;
+  width: 100%;
+  padding: 16px;
+  border-radius: 5px;
+  border: 1px solid var(--grey);
+  color: var(--gray);
+  font-weight: 400;
+  font-size: 1.6rem;
+  cursor: pointer;
 }
 
 input[type="submit"] {
-    margin-top: 28px;
-    width: 100%;
-    padding: 16px;
-    border-radius: 5px;
-    background-color: var(--dark-slate-grey);
-    color: var(--white);
-    font-weight: 700;
-    font-size: 1.6rem;
-    border: none;
-    
+  margin-top: 28px;
+  width: 100%;
+  padding: 16px;
+  border-radius: 5px;
+  background-color: var(--dark-slate-grey);
+  color: var(--white);
+  font-weight: 700;
+  font-size: 1.6rem;
+  border: none;
 }
 
-input[type="submit"]:hover {
-    cursor: pointer;
-    background: linear-gradient(to right, var(--color1) 0%, var(--color2)70%);
+input[type="submit"]:hover,
+#dismiss:hover {
+  cursor: pointer;
+  background: linear-gradient(to right, var(--color1) 0%, var(--color2) 70%);
+  border: none;
+  box-shadow: 0 10px 20px hsla(4, 100%, 67%, 0.5);
+}
+
+.success-message {
+  max-width: 375px;
+}
+
+.success-content {
+  display: flex;
+  flex-direction: column;
+  height: 90%;
+  padding: 120px 30px 0 20px;
+}
+
+.success-content img {
+  height: 25%;
+  width: 25%;
+}
+
+.success-content .success-header {
+  font-size: 3.2rem;
+  color: var(--dark-slate-grey);
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.success-content .message {
+  font-size: 1.6rem;
+  line-height: 1.5;
+  color: var(--dark-slate-grey);
+  font-weight: 400;
+}
+
+#dismiss {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 12px auto;
+  width: 90%;
+  padding: 20px;
+  background-color: var(--dark-slate-grey);
+  color: var(--white);
+  border-radius: 10px;
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+
+@media screen and (min-width: 850px) {
+  body {
+    background-color: var(--dark-slate-grey);
+  }
+
+  .main {
+    align-items: center;
+    height: 100%;
+    width: 100%;
+  }
+
+  .main-content {
+    background-color: var(--white);
+    max-width: 980px;
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+    border-radius: 20px;
+  }
+
+  .content {
+    max-width: 50%;
+    margin-right: 15px;
+  }
+
+  .main-content picture {
+    padding: 15px;
+  }
+
+  .success-message {
+    background-color: var(--white);
+    border-radius: 30px;
+    max-height: 400px;
+    max-width: 400px;
+    padding-bottom: 50px;
+  }
+
+  .success-content img {
+    height: 18%;
+    width: 18%;
+    margin-bottom: 25px;
+  }
+
+  .success-content {
+    padding: 20px 45px;
+  }
+
+  .success-content .success-header {
+    font-size: 3.6rem;
+  }
+
+  .success-content .message {
+    font-size: 1.3rem;
+  }
+
+  #dismiss {
+    padding: 15px;
+    font-size: 1.5rem;
+    width: 80%;
+  }
+
+  .attribution {
+    color: var(--white);
+  }
+
+  .attribution a {
+    color: var(--tomato) !important;
+  }
 }
