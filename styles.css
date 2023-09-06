@@ -212,7 +212,7 @@ input[type="submit"]:hover,
   .content .content-header {
     padding-bottom: 15px;
     width: 100%;
-    font-size: 5.6rem;
+    font-size: 5.5rem;
   }
 
   .main-content picture {
@@ -238,7 +238,7 @@ input[type="submit"]:hover,
   }
 
   .success-content .success-header {
-    font-size: 4rem;
+    font-size: 3.9rem;
   }
 
   .success-content .message {
