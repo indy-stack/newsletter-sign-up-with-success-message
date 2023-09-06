@@ -16,7 +16,6 @@ This is a solution to the [Newsletter sign-up form with success message challeng
 - [Author](#author)
 
 
-
 ## Overview
 
 ### The challenge
